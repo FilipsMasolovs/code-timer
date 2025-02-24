@@ -21,73 +21,95 @@ export const SettingsModal = ({ isOpen, onClose, settings, onSave }: SettingsMod
 		onClose()
 	}
 
+	function isNumeric(value: string) {
+		return /^-?\d+$/.test(value)
+	}
+
+	const inputClasses =
+		'p-2 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200'
+
 	return (
 		<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-200'>
-			<div className='bg-white dark:bg-gray-800 rounded-lg p-6 w-96 transform transition-all duration-200 shadow-xl'>
-				<h2 className='text-2xl font-semibold mb-4 dark:text-white'>Settings</h2>
-				<form onSubmit={handleSubmit}>
+			<div
+				className='flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-lg p-6 w-96 transform transition-all duration-200 shadow-xl'
+				style={{ height: '560px', width: '460px' }}
+			>
+				<h2 className='text-2xl font-semibold mb-4 text-gray-700 dark:text-white'>Settings</h2>
+				<form className='w-full' onSubmit={handleSubmit}>
 					<div className='space-y-4'>
 						<div>
-							<label className='block text-sm font-medium dark:text-gray-200'>
+							<label className='block text-sm font-medium text-gray-700 dark:text-gray-200'>
 								Work Duration (minutes)
 								<input
-									type='number'
+									type='text'
+									inputMode='numeric'
+									pattern='[0-9]+'
 									value={formData.workDuration}
-									onChange={(e) =>
+									onChange={(e) => {
+										if (!isNumeric(e.target.value)) return
 										setFormData({
 											...formData,
 											workDuration: Number(e.target.value),
 										})
-									}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600'
+									}}
+									className={inputClasses}
 								/>
 							</label>
 						</div>
 						<div>
-							<label className='block text-sm font-medium dark:text-gray-200'>
+							<label className='block text-sm font-medium text-gray-700 dark:text-gray-200'>
 								Break Duration (minutes)
 								<input
-									type='number'
+									type='text'
+									inputMode='numeric'
+									pattern='[0-9]+'
 									value={formData.breakDuration}
-									onChange={(e) =>
+									onChange={(e) => {
+										if (!isNumeric(e.target.value)) return
 										setFormData({
 											...formData,
 											breakDuration: Number(e.target.value),
 										})
-									}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600'
+									}}
+									className={inputClasses}
 								/>
 							</label>
 						</div>
 						<div>
-							<label className='block text-sm font-medium dark:text-gray-200'>
+							<label className='block text-sm font-medium text-gray-700 dark:text-gray-200'>
 								Long Break Duration (minutes)
 								<input
-									type='number'
+									type='text'
+									inputMode='numeric'
+									pattern='[0-9]+'
 									value={formData.longBreakDuration}
-									onChange={(e) =>
+									onChange={(e) => {
+										if (!isNumeric(e.target.value)) return
 										setFormData({
 											...formData,
 											longBreakDuration: Number(e.target.value),
 										})
-									}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600'
+									}}
+									className={inputClasses}
 								/>
 							</label>
 						</div>
 						<div>
-							<label className='block text-sm font-medium dark:text-gray-200'>
+							<label className='block text-sm font-medium text-gray-700 dark:text-gray-200'>
 								Sessions Before Long Break
 								<input
-									type='number'
+									type='text'
+									inputMode='numeric'
+									pattern='[0-9]+'
 									value={formData.sessionsBeforeLongBreak}
-									onChange={(e) =>
+									onChange={(e) => {
+										if (!isNumeric(e.target.value)) return
 										setFormData({
 											...formData,
 											sessionsBeforeLongBreak: Number(e.target.value),
 										})
-									}
-									className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600'
+									}}
+									className={inputClasses}
 								/>
 							</label>
 						</div>

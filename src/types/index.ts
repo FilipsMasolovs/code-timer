@@ -8,9 +8,9 @@ export interface TimerSettings {
 export type TimerState = 'work' | 'break' | 'longBreak' | 'idle'
 
 export interface SessionStats {
-	totalSessions: number;
-	totalWorkTime: number;
-	currentStreak: number;
-	todaySessions: number;
-	lastSessionDate: string | null;
-  }
+	totalSessions: number
+	totalWorkTime: number
+	currentStreak: number
+	todaySessions: number
+	lastSessionDate: string | null
+}

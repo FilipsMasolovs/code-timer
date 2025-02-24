@@ -1,0 +1,97 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "pnpm run build",
+    "beforeDevCommand": "pnpm run dev",
+    "devPath": "http://localhost:3000",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "CodeTimer",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "window": {
+        "all": false,
+        "center": true,
+        "close": true,
+        "create": true,
+        "hide": true,
+        "maximize": true,
+        "minimize": true,
+        "print": true,
+        "requestUserAttention": true,
+        "setAlwaysOnTop": true,
+        "setDecorations": true,
+        "setFocus": true,
+        "setFullscreen": true,
+        "setIcon": true,
+        "setMaxSize": true,
+        "setMinSize": true,
+        "setPosition": true,
+        "setResizable": true,
+        "setSize": true,
+        "setSkipTaskbar": true,
+        "setTitle": true,
+        "show": true,
+        "startDragging": true,
+        "unmaximize": true,
+        "unminimize": true
+      },
+      "notification": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "Productivity",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.codetimer.dev",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "height": 624,
+        "width": 524,
+        "fullscreen": false,
+        "resizable": false,
+        "title": "CodeTimer",
+        "decorations": true
+      }
+    ]
+  }
+}
