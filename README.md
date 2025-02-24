@@ -1,6 +1,6 @@
 # CodeTimer
 
-**CodeTimer** is a minimalist Pomodoro timer designed for developers. Enjoy a distraction‐free focus experience with a sleek circular progress ring, customizable sessions, keyboard shortcuts, dark/light mode, and detailed session statistics.
+**CodeTimer** is a minimalist Pomodoro timer designed for developers. Enjoy a distraction‐free focus experience with a sleek circular progress ring, customizable sessions, keyboard shortcuts and a beautiful dark/light mode.
 
 **Desktop Integration:**\
 Built with Tauri, CodeTimer isn’t just a web app—it runs as a native desktop application on macOS and Windows! With a dedicated full-window mode and a compact, draggable mini mode, it integrates seamlessly into your workflow. Native notifications and precise window management ensure you stay on track, whether you're coding or multitasking.

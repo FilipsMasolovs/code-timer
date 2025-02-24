@@ -11,6 +11,9 @@ dependencies:
   next:
     specifier: 15.1.7
     version: 15.1.7(react-dom@19.0.0)(react@19.0.0)
+  notification:
+    specifier: link:@tauri-apps/api/notification
+    version: link:@tauri-apps/api/notification
   react:
     specifier: ^19.0.0
     version: 19.0.0

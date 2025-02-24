@@ -53,6 +53,12 @@ export const Timer = () => {
 		)
 	}
 
+	interface TauriWindow extends Window {
+		__TAURI_IPC__?: unknown
+	}
+
+	const isDesktop = typeof window !== 'undefined' && (window as TauriWindow).__TAURI_IPC__ !== undefined
+
 	return (
 		<div className='min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900'>
 			<div
@@ -90,12 +96,14 @@ export const Timer = () => {
 						>
 							{theme === 'dark' ? 'Light Mode (D)' : 'Dark Mode (D)'}
 						</button>
-						<button
-							onClick={toggleMiniMode}
-							className='text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors'
-						>
-							Mini Mode (M)
-						</button>
+						{isDesktop && (
+							<button
+								onClick={toggleMiniMode}
+								className='text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors'
+							>
+								Mini Mode (M)
+							</button>
+						)}
 					</div>
 				</div>
 			</div>
